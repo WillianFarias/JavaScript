@@ -38,11 +38,34 @@
 
     var resultado = soma(1, 2);
 
+    //Condicionais
+    function retornaSexo(sexo) {
+      /*if (sexo === 'M') {
+        return 'Masculino';
+      } else if (sexo === 'F'){
+        return 'Feminino';
+      } else {
+        return 'Outro';
+      }*/
+      switch (sexo) {
+        case 'M':
+          return 'Masculino';
+          break;
+        case 'F':
+          return 'Feminino';
+          break;
+        default:
+          return 'Outro';
+          break;
+      }
+    }
+
     console.log(alunos[1]);
     console.log(aluno.peso);
     console.log(resultado);
     console.log(x);
     console.log(resultado);
+    console.log(retornaSexo('M'));
 
   </script>
 </body>

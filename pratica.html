@@ -72,6 +72,27 @@
     var anosEstudo = 5;
     console.log(experiencia(anosEstudo));
 
+    //vetor de objetos
+    var usuarios = [
+      {
+        nome: "Diego",
+        habilidades: ["Javascript", "ReactJS", "Redux"]
+      },
+      {
+        nome: "Gabriel",
+        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+      }
+    ];
+
+    function retornarFrase(usuarios) {
+      for (valor of usuarios){
+        console.log("O " + valor.nome + " possui as habilidades: "
+         + valor.habilidades.join(', '));
+      }
+    }
+
+    retornarFrase(usuarios);
+
   </script>
 </body>
 </html>

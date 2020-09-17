@@ -22,6 +22,40 @@
     }
 
     informacoesUsuario(endereco);
+
+    //intervalo entre valores, retornando apenas valores pares
+    function pares(valor1, valor2) {
+      var maior, menor;
+      if (valor1 > valor2) {
+        maior = valor1;
+        menor = valor2;
+      } else {
+        maior = valor2;
+        menor = valor1;
+      }
+
+      while (maior >= menor) {
+        if (menor % 2 === 0) {
+          console.log(menor)
+        }
+        menor += 1;
+      }
+    }
+
+    pares(20, 10);
+
+    //verificar skills
+    function temHabilidade(skill) {
+      if (skill.indexOf('JavaScript') != -1) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    var skills = ["JavaScript", "ReactJS", "React Native"];
+    console.log(temHabilidade(skills));
+
   </script>
 </body>
 </html>

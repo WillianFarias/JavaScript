@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulando a DOM</title>
+</head>
+<body>
+  <!--Dom: árvore de elementos-->
+  <div id="app">
+    <button onclick="mostrarAlerta()">Me pressione</button>
+    <button onmouseover="mostrarOutraAlerta()">Passe</button>
+    <input onkeypress="mostrarOutraAlerta()">
+  </div>
+  
+  <script>
+    function mostrarAlerta() {
+      alert('Botão foi clicado');
+    }
+
+    function mostrarOutraAlerta() {
+      alert('Mouse sobre o botão');
+    }
+  </script>
+</body>
+</html>

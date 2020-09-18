@@ -8,18 +8,34 @@
 <body>
   <!--Dom: árvore de elementos-->
   <div id="app">
-    <button onclick="mostrarAlerta()">Me pressione</button>
+    <!--<button onclick="mostrarAlerta()">Me pressione</button>
     <button onmouseover="mostrarOutraAlerta()">Passe</button>
-    <input onkeypress="mostrarOutraAlerta()">
+    <input onkeypress="mostrarOutraAlerta()">-->
+    <input type="text" name="nome" id="nome" class="nome">
+    <button class="botao">Adicionar</button>
   </div>
   
   <script>
+    /*
     function mostrarAlerta() {
       alert('Botão foi clicado');
     }
 
     function mostrarOutraAlerta() {
       alert('Mouse sobre o botão');
+    }*/
+
+    //var inputElement = document.getElementById('nome');
+    //var inputElement = document.getElementsByTagName('input');//[0];retorna um vetor
+    //var inputElement = document.getElementsByClassName('input');//return vetor
+    //var inputElement = document.querySelector('div#app input');
+    //var inputElement = document.querySelector('input[name=nome]');
+    var btnElement = document.querySelector('button.botao');
+    var inputElement = document.querySelector('input[name=nome]');
+
+    btnElement.onclick = function() {
+      var texto = inputElement.value;
+      alert(texto);
     }
   </script>
 </body>

@@ -10,9 +10,14 @@
   <div id="app">
     <!--<button onclick="mostrarAlerta()">Me pressione</button>
     <button onmouseover="mostrarOutraAlerta()">Passe</button>
-    <input onkeypress="mostrarOutraAlerta()">-->
+    <input onkeypress="mostrarOutraAlerta()">
+
     <input type="text" name="nome" id="nome" class="nome">
     <button class="botao">Adicionar</button>
+
+    <input id="nome" /> -->
+
+    <div class="box"></div>
   </div>
   
   <script>
@@ -23,7 +28,7 @@
 
     function mostrarOutraAlerta() {
       alert('Mouse sobre o botão');
-    }*/
+    }
 
     //var inputElement = document.getElementById('nome');
     //var inputElement = document.getElementsByTagName('input');//[0];retorna um vetor
@@ -36,7 +41,29 @@
     btnElement.onclick = function() {
       var texto = inputElement.value;
       alert(texto);
-    }
+    }*/
+
+/*
+    var linkElement = document.createElement('a');
+    linkElement.setAttribute('href', 'https://app.rocketseat.com.br');
+    linkElement.setAttribute('title', 'Site da rocketseat');
+
+    var textElement = document.createTextNode('Acessar site rocketseat');
+    linkElement.appendChild(textElement);
+
+    var divElement = document.querySelector('div#app');
+    divElement.appendChild(linkElement);
+
+    var inputElement = document.querySelector('#nome');
+    divElement.removeChild(inputElement);*/
+
+    var boxElemet = document.querySelector('.box');
+
+    //console.log(boxElemet);
+    boxElemet.style.width = '100px';
+    boxElemet.style.height = '100px';
+    boxElemet.style.backgroundColor = '#f00';
+
   </script>
 </body>
 </html>

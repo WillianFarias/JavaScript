@@ -2,9 +2,7 @@ var listElement = document.querySelector('#app ul');
 var inputElement = document.querySelector('#app input');
 var buttonElement = document.querySelector('#app button');
 
-var todos = [
-  'Fazer café'
-];
+var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
 
 function renderTodos() {
   //tudo que estiver dentro da html vai ficar como vazio
@@ -40,6 +38,7 @@ function addTodo() {
   inputElement.value = '';
 
   renderTodos();
+  saveToStorage();
 }
 
 buttonElement.onclick = addTodo;
@@ -47,4 +46,9 @@ buttonElement.onclick = addTodo;
 function deleteTodo(posicao) {
   todos.splice(posicao, 1);
   renderTodos();
+  saveToStorage();
+}
+
+function saveToStorage(){
+  localStorage.setItem('list_todos', JSON.stringify(todos));
 }

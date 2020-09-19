@@ -14,6 +14,7 @@ xhr.onreadystatechange = function () {
   }
 }*/
 
+/*
 var minhaPromise = function() {
   return new Promise(function(resolve, reject) {
     var xhr = new XMLHttpRequest();
@@ -36,6 +37,18 @@ var minhaPromise = function() {
 
 //Trabalhando com requisicoes assincronas com promises
 minhaPromise()
+  //resolve invoca um .then
+  .then(function(response){
+    console.log(response);
+  })
+  //reject invoca um .catch
+  .catch(function(error){
+    console.warn(error);
+  })
+*/
+
+//Trabalhando com requisicoes assincronas com axios
+axios.get('https://api.github.com/users/diego3g')
   //resolve invoca um .then
   .then(function(response){
     console.log(response);

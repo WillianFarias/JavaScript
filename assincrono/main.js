@@ -48,7 +48,7 @@ minhaPromise()
 */
 
 //Trabalhando com requisicoes assincronas com axios
-axios.get('https://api.github.com/users/diego3g')
+/*axios.get('https://api.github.com/users/diego3g')
   //resolve invoca um .then
   .then(function(response){
     console.log(response);
@@ -56,4 +56,58 @@ axios.get('https://api.github.com/users/diego3g')
   //reject invoca um .catch
   .catch(function(error){
     console.warn(error);
+  })*/
+
+function checkAge(age) {
+  return new Promise(function(resolve, reject) {
+
+  if(age > 17 ){
+    resolve('Older');
+  } else {
+    reject('Minor');
+  }
+  });
+}
+
+checkAge(17)
+  .then(function(response){
+    console.log(response);
   })
+  .catch(function(error){
+    console.log(error)
+  })
+
+
+//Requisicao a api do github utilizando o axios e preenchendo lista com resposi
+//torios de user informado
+var inputElement = document.querySelector('input[name=user]');
+var buttonElement = document.querySelector('div#app button');
+var divElement = document.querySelector('div#app');
+var list = document.createElement('ul');
+
+buttonElement.onclick = function searchGit() {
+  var userGit = inputElement.value;
+  axios.get('https://api.github.com/users/' + userGit + '/repos')
+    .then(function (response) {
+      listRepositories(response);
+      inputElement.value = '';
+    })
+    .catch(function(error){
+      console.log(error)
+    })
+}
+
+function listRepositories(object) {
+
+  list.innerHTML = '';
+
+  for (const repository of object.data) {
+    var item = document.createElement('li');
+    var text = document.createTextNode(repository.name);
+
+    item.appendChild(text);
+    list.appendChild(item);
+  }
+
+  divElement.appendChild(list);
+}

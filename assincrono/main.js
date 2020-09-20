@@ -74,7 +74,7 @@ checkAge(17)
     console.log(response);
   })
   .catch(function(error){
-    console.log(error)
+    console.log(error);
   })
 
 
@@ -93,11 +93,17 @@ buttonElement.onclick = function searchGit() {
       inputElement.value = '';
     })
     .catch(function(error){
-      console.log(error)
+      if (error.response.status == 404) {
+        alert('Usuário não existe');
+        inputElement.value = '';
+        list.innerHTML = '';
+      }
     })
 }
 
 function listRepositories(object) {
+
+  //loading();
 
   list.innerHTML = '';
 
@@ -111,3 +117,12 @@ function listRepositories(object) {
 
   divElement.appendChild(list);
 }
+
+/*
+function loading() {
+  var item = document.createElement('li');
+  var text = document.createTextNode('Carregando');
+
+  item.appendChild(text);
+  list.appendChild(item);
+}*/
